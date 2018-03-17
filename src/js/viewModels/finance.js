@@ -12,11 +12,11 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojcomposite', 'jet-composites/d
     function FinanceViewModel() {
       var self = this;
 
-var imageRoot = "http://www.oracle.com/webfolder/technetwork/jet/demo/"
+var imageRoot = ""
         self.employees = [
           {
             name: 'Deb Raphaely',
-            avatar: imageRoot+'images/composites/debraphaely.png',
+            avatar: imageRoot+'css/images/debraphaely.png',
             title: 'Purchasing Director',
             work: 5171278899,
             email: 'deb.raphaely@oracle.com'

@@ -11,5 +11,5 @@ demo-memory-game {
 }
 
 demo-memory-game demo-memory-card .demo-memory-card-front-side {
-  background-image: url('http://www.oracle.com/webfolder/technetwork/jet/demo/images/card-background_2.png');
+  background-image: url('images/card-background_2.png');
 }

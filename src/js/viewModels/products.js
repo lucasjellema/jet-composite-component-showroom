@@ -13,7 +13,7 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojcomposite',
       var self = this;
 
       self.attempts = ko.observable(0);
-      var imageRoot = "http://www.oracle.com/webfolder/technetwork/jet/demo/"
+      var imageRoot = "css/"
       self.chartImages = [
         {value: 'donut chart', url: imageRoot+'images/componentcategories/donutchart_list.png'}, 
         {value: 'pie chart', url:  imageRoot+'images/componentcategories/piechart_list.png'},

@@ -1,16 +1,20 @@
 {
-  "name": "README.md",
-  "path": "src/js/jet-composites/table-redsam/README.md",
-  "sha": "d93da497d1663064c8f17ffe2530ea85b2ababa3",
-  "size": 140,
-  "url": "https://api.github.com/repos/abaranovskis-redsamurai/jetwebcomponentsandboxapp/contents/src/js/jet-composites/table-redsam/README.md?ref=master",
-  "html_url": "https://github.com/abaranovskis-redsamurai/jetwebcomponentsandboxapp/blob/master/src/js/jet-composites/table-redsam/README.md",
-  "git_url": "https://api.github.com/repos/abaranovskis-redsamurai/jetwebcomponentsandboxapp/git/blobs/d93da497d1663064c8f17ffe2530ea85b2ababa3",
-  "download_url": "https://raw.githubusercontent.com/abaranovskis-redsamurai/jetwebcomponentsandboxapp/master/src/js/jet-composites/table-redsam/README.md",
-  "type": "file",
-  "_links": {
-    "self": "https://api.github.com/repos/abaranovskis-redsamurai/jetwebcomponentsandboxapp/contents/src/js/jet-composites/table-redsam/README.md?ref=master",
-    "git": "https://api.github.com/repos/abaranovskis-redsamurai/jetwebcomponentsandboxapp/git/blobs/d93da497d1663064c8f17ffe2530ea85b2ababa3",
-    "html": "https://github.com/abaranovskis-redsamurai/jetwebcomponentsandboxapp/blob/master/src/js/jet-composites/table-redsam/README.md"
-  }
+  "name": "jet-composite-component-showroom",
+  "version": "1.0.0",
+  "description": "An Oracle JavaScript Extension Toolkit(JET) web app",
+  "dependencies": {
+    "@oracle/oraclejet": "~4.1.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "@oracle/grunt-oraclejet": "~4.1.0",
+    "load-grunt-config": "0.19.2",
+    "@oracle/oraclejet-tooling": "~4.1.0",
+    "qunit-reporter-junit": "^1.1.1",
+    "qunitjs": "^2.3.3"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "private": true
 }

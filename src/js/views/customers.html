@@ -1,0 +1,17 @@
+<h1>Composite Component demo-contact-form</h1>
+<h3>Based on JET Cookbook</h3>
+<a target="_new" href="http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=dataBinding#">http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=dataBinding#</a>
+
+<div class="oj-flex-item">
+    <h3>Contact Form</h3>
+    <demo-contact-form id="form1" name="[[name]]" email="{{email}}" address="{{address}}">
+    </demo-contact-form>
+</div>
+<div class="oj-flex-item">
+    <h4>One-Way Bound Name Attribute</h4>
+    <oj-label for="nameObs">Update name observable</oj-label>
+    <oj-input-text id="nameObs" value="{{name}}"></oj-input-text>
+    <oj-label for="nameProp">Update name property</oj-label>
+    <oj-input-text id="nameProp" value="{{nameProp}}"></oj-input-text>
+    <br>
+</div>

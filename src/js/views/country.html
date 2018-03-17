@@ -1,0 +1,9 @@
+<body class="demo-disable-bg-image">
+  <h1>Composite Component Country Selection</h1>
+  <h3>Based on Oracle Developer Community article</h3>
+  <p>Click on World icon to open a popup with the currently selected country highlight. Select a country and click or press Save to confirm the selection </p>
+    <div>
+        <input-country country-name="{{country}}" country-selection-handler={{handleCountrySelection}} />
+    </div>
+    <h2 data-bind="text: upperCountry"></h2>
+</body>

@@ -1,0 +1,22 @@
+<h1>
+    Composite Component Slotting (demo-columns) </h1>
+<h3>Based on JET Cookbook</h3>
+<a target="_new" href="http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=slot">http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=slot</a>
+
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+        <demo-columns id="composite-container" headers='["Sales", "Human Resources", "Support"]'>
+            <!-- ko foreach: sales -->
+            <demo-card slot="columnA" name="[[name]]" work-title="[[title]]"></demo-card>
+            <!-- /ko -->
+            <!-- ko foreach: humanResources -->
+            <demo-card slot="columnB" name="[[name]]" work-title="[[title]]"></demo-card>
+            <!-- /ko -->
+            <!-- ko foreach: support -->
+            <demo-card slot="columnC" name="[[name]]" work-title="[[title]]"></demo-card>
+            <!-- /ko -->
+        </demo-columns>
+
+
+    </div>
+</div>

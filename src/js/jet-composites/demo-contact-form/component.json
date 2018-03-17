@@ -1,0 +1,23 @@
+{
+  "name": "demo-contact-form",
+  "description": "A basic contact form element.",
+  "version": "1.0.2",
+  "jetVersion": ">=3.0.0 <5.0.0",
+  "properties": {
+    "name": {
+      "description": "The contact's name.",
+      "type": "string",
+      "writeback": true
+    },
+    "email": {
+      "description": "The contact's email address.",
+      "type": "string",
+      "writeback": true
+    },
+    "address": {
+      "description": "The contact's address.",
+      "type": "string",
+      "writeback": true
+    }
+  }
+}

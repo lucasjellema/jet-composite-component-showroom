@@ -1,0 +1,25 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+    <h1>Composite Component demo-memory-game</h1>
+    <h3>Based on JET Cookbook</h3>
+    <a target="_new" href="http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=nested#">http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=nested#</a>
+    <div id="sampleDemo" style="" class="demo-padding demo-container">
+        <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+            <div id="composite-container">
+                <oj-label for="score1" id="scoreLabel" class="oj-label-inline">Attempts:</oj-label>
+                <oj-input-number id="score1" readonly="true" value="[[attempts]]"></oj-input-number>
+                <demo-memory-game id="game1" cards="[[chartImages]]" on-attempts-changed="[[updateAttempts]]" on-has-won-changed="[[showWinnerPopup]]">
+
+                </demo-memory-game>
+                <oj-popup style='display:none;' id='popup1' position='{"at":{"horizontal":"center","vertical":"center"},"my":{"horizontal":"center","vertical":"center"}}'>
+                    <span class="blink-rainbow">You've won!</span>
+                </oj-popup>
+            </div>
+
+
+        </div>
+    </div>
+</div>

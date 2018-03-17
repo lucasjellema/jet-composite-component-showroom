@@ -1,0 +1,22 @@
+<body class="demo-disable-bg-image">
+  <h1>Composite Component demo-zoo</h1>
+  <h3>Based on JET Cookbook</h3>
+  <a target="_new" href="http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=arrays">http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=arrays</a>
+
+
+  <div id="sampleDemo" style="" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+      <div id="composite-container">
+        <demo-zoo id="zoo1" zoo-name="Oracle Park Zoo" animals="{{animals}}">
+        </demo-zoo>
+        <br>
+        <oj-button on-click="[[externalAdd]]" disabled="[[btnDisabled]]">Add From Application</oj-button>
+        <oj-button on-click="[[internalAdd]]" disabled="[[btnDisabled]]">Add From Composite</oj-button>
+        <br>
+        <div data-bind="text: arrayLen"></div>
+      </div>
+
+
+    </div>
+  </div>
+</body>

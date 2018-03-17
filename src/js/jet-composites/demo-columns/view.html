@@ -1,0 +1,15 @@
+<div class="oj-flex oj-flex-item-pad">
+  <div role="group" data-bind="attr: {'aria-label': $props.headers[0]}" class="oj-flex-item demo-columns-col-a oj-flex oj-sm-flex-direction-column oj-sm-align-items-center">
+    <h3 data-bind="text: $props.headers[0]"></h3>
+    <oj-bind-slot name="columnA">
+    </oj-bind-slot>
+  </div>
+  <div role="group" data-bind="attr: {'aria-label': $props.headers[1]}" class="oj-flex-item demo-columns-col-b oj-flex oj-sm-flex-direction-column oj-sm-align-items-center">
+    <h3 data-bind="text: $props.headers[1]"></h3>
+    <oj-bind-slot name="columnB"></oj-bind-slot>
+  </div>
+  <div role="group" data-bind="attr: {'aria-label': $props.headers[2]}" class="oj-flex-item demo-columns-col-c oj-flex oj-sm-flex-direction-column oj-sm-align-items-center">
+    <h3 data-bind="text: $props.headers[2]"></h3>
+    <oj-bind-slot name="columnC"></oj-bind-slot>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<body class="demo-disable-bg-image">
+  <h1>Composite Component demo-card</h1>
+  <h3>Based on JET Cookbook</h3>
+  <a target="_new" href="http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=basic">http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=basic</a>
+  <div id="sampleDemo" style="" class="demo-padding demo-container">
+    <div id="sampleDemo" style="" class="demo-padding demo-container">
+      <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+        <div id="composite-container" class="oj-flex oj-sm-flex-items-initial">
+          <!-- ko foreach: employees -->
+          <demo-card class="oj-flex-item" name="[[name]]" avatar="[[avatar]]" work-title="[[title]]" work-number="[[work]]" email="[[email]]">
+          </demo-card>
+          <!-- /ko -->
+        </div>
+
+
+      </div>
+    </div>
+
+</body>

@@ -30,10 +30,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojrouter'],
         console.log('Selected key hanlding outside component: ' + event.detail.value);
       };
 
-      // programmatic navigation to the Products tab
-      self.enterCatalog = function () {
-          oj.Router.rootInstance.go('products');
-      }
 
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
       // Please reference the ojModule jsDoc for additional available methods.

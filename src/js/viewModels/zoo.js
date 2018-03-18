@@ -3,49 +3,68 @@
  * The Universal Permissive License (UPL), Version 1.0
  */
 /*
- * Your customer ViewModel code goes here
+ * Your about ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojinputtext', 'ojs/ojbutton', 'ojs/ojcomposite', 'jet-composites/demo-contact-form/loader'],
-  function (oj, ko, $) {
-
-    function CustomersViewModel() {
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojcomposite', 'jet-composites/demo-zoo/loader', 'ojs/ojbutton'],
+ function(oj, ko, $) {
+  
+    function ZooViewModel() {
       var self = this;
+     
+      var currentAnimals = [
+        {'name': 'African Spurred Tortoise', 'exhibit': 'Kalahari Kingdom'},
+        {'name': 'Emu', 'exhibit': 'Outback Trail'},
+        {'name': 'Ring-Tailed Lemur', 'exhibit': 'Tropical Forest'},
+        {'name': 'Red Kangaroo', 'exhibit': 'Outback Trail'},
+        {'name': 'Kookaburra', 'exhibit': 'Outback Trail'},
+        {'name': 'Capybara', 'exhibit': 'Tropical Forest'}
+      ];
+      var newAnimals = [
+        {'name': 'Zebra', 'exhibit': 'Serengeti Crossing'},
+        {'name': 'Ocelot', 'exhibit': 'Tropical Forest'},
+        {'name': 'African Lion', 'exhibit': 'Kalahari Kingdom'},
+        {'name': 'Warthog', 'exhibit': 'Serengeti Crossing'}
+      ];
+      this.animals = ko.observableArray(currentAnimals);
+      this.btnDisabled = ko.observable(false);
+      
+      var disableAdd = function() {
+        if (newAnimals.length == 0) {
+          self.btnDisabled(true);
+        }
+      };
+  
+      self.arrayLen = ko.computed(function() {
+        return 'The current length of the animals array is: ' + self.animals().length;
+      })
+  
+      this.externalAdd = function(event) {
+        // The application can update the demo-zoo composite's animals array property by using the
+        // knockout observable array methods. Otherwise, when using the element.animals property setter,
+        // the application will need to make a copy of the array before modifying or set the property to
+        // a new array reference.
+        self.animals.push(newAnimals.pop());
+  
+        // Disable add buttons once we've added all the available animals
+        disableAdd();
+        return true;
+      };
+  
+      this.internalAdd = function(event) {
+        // See the demo-zoo composite's ViewModel for the addAnimal
+        // method implementation to see how the ViewModel would update the
+        // animals array property.
+        var zoo = document.getElementById('zoo1');
+        zoo.addAnimal(newAnimals.pop());
+  
+        // Disable add buttons once we've added all the available animals
+        disableAdd();
+        return true;
+      };
+
+     
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
       // Please reference the ojModule jsDoc for additional available methods.
-
-      self.name = ko.observable("Adam Fripp");
-      self.email = ko.observable("adam.fripp@oracle.com");
-      self.address = ko.observable("123 Oracle Rd");
-
-      // Initialize value from the name observable, but later updates
-      // will come from the actual element property
-      self.nameProp = ko.observable("Adam Fripp");
-      self.nameProp.subscribe(function (newValue) {
-        var form = document.getElementById('form1');
-        form.name = newValue;
-      });
-
-      self.emailProp = ko.observable("adam.fripp@oracle.com");
-      self.emailProp.subscribe(function (newValue) {
-        var form = document.getElementById('form1');
-        form.email = newValue;
-      });
-      self.init = function () {
-
-
-        var form1 = document.getElementById('form1');
-         form1.addEventListener('name-changed', function (event) {
-          self.nameProp(event.detail.value);
-        });
-
-          form1.addEventListener('email-changed', function (event) {
-            self.emailProp(event.detail.value);
-          });
-
-      }
-
-      $(document).ready(function () { self.init(); })
-
 
       /**
        * Optional ViewModel method invoked when this ViewModel is about to be
@@ -58,7 +77,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojinputtext', 'ojs/ojbutton', '
        * @return {Promise|undefined} - If the callback returns a Promise, the next phase (attaching DOM) will be delayed until
        * the promise is resolved
        */
-      self.handleActivated = function (info) {
+      self.handleActivated = function(info) {
         // Implement if needed
       };
 
@@ -71,7 +90,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojinputtext', 'ojs/ojbutton', '
        * @param {Function} info.valueAccessor - The binding's value accessor.
        * @param {boolean} info.fromCache - A boolean indicating whether the module was retrieved from cache.
        */
-      self.handleAttached = function (info) {
+      self.handleAttached = function(info) {
         // Implement if needed
       };
 
@@ -84,7 +103,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojinputtext', 'ojs/ojbutton', '
        * @param {Node} info.element - DOM element or where the binding is attached. This may be a 'virtual' element (comment node).
        * @param {Function} info.valueAccessor - The binding's value accessor.
        */
-      self.handleBindingsApplied = function (info) {
+      self.handleBindingsApplied = function(info) {
         // Implement if needed
       };
 
@@ -96,7 +115,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojinputtext', 'ojs/ojbutton', '
        * @param {Function} info.valueAccessor - The binding's value accessor.
        * @param {Array} info.cachedNodes - An Array containing cached nodes for the View if the cache is enabled.
        */
-      self.handleDetached = function (info) {
+      self.handleDetached = function(info) {
         // Implement if needed
       };
     }
@@ -106,6 +125,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojinputtext', 'ojs/ojbutton', '
      * each time the view is displayed.  Return an instance of the ViewModel if
      * only one instance of the ViewModel is needed.
      */
-    return new CustomersViewModel();
+    return new ZooViewModel();
   }
 );

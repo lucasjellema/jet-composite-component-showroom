@@ -3,35 +3,49 @@
  * The Universal Permissive License (UPL), Version 1.0
  */
 /*
- * Your about ViewModel code goes here
+ * Your customer ViewModel code goes here
  */
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojinputtext', 'ojs/ojbutton', 'ojs/ojcomposite', 'jet-composites/demo-contact-form/loader'],
+  function (oj, ko, $) {
 
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojcomposite', 'jet-composites/demo-card/loader'],
- function(oj, ko, $) {
-  
-    function FinanceViewModel() {
+    function ContactFormViewModel() {
       var self = this;
-
-var imageRoot = ""
-        self.employees = [
-          {
-            name: 'Deb Raphaely',
-            avatar: imageRoot+'css/images/debraphaely.png',
-            title: 'Purchasing Director',
-            work: 5171278899,
-            email: 'deb.raphaely@oracle.com'
-          },
-          {
-            name: 'Adam Fripp',
-            avatar: null,
-            title: 'IT Manager',
-            work: 6501232234,
-            email: 'adam.fripp@oracle.com'
-          }
-        ];
-     
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
       // Please reference the ojModule jsDoc for additional available methods.
+
+      self.name = ko.observable("Adam Fripp");
+      self.email = ko.observable("adam.fripp@oracle.com");
+      self.address = ko.observable("123 Oracle Rd");
+
+      // Initialize value from the name observable, but later updates
+      // will come from the actual element property
+      self.nameProp = ko.observable("Adam Fripp");
+      self.nameProp.subscribe(function (newValue) {
+        var form = document.getElementById('form1');
+        form.name = newValue;
+      });
+
+      self.emailProp = ko.observable("adam.fripp@oracle.com");
+      self.emailProp.subscribe(function (newValue) {
+        var form = document.getElementById('form1');
+        form.email = newValue;
+      });
+      self.init = function () {
+
+
+        var form1 = document.getElementById('form1');
+         form1.addEventListener('name-changed', function (event) {
+          self.nameProp(event.detail.value);
+        });
+
+          form1.addEventListener('email-changed', function (event) {
+            self.emailProp(event.detail.value);
+          });
+
+      }
+
+      $(document).ready(function () { self.init(); })
+
 
       /**
        * Optional ViewModel method invoked when this ViewModel is about to be
@@ -44,7 +58,7 @@ var imageRoot = ""
        * @return {Promise|undefined} - If the callback returns a Promise, the next phase (attaching DOM) will be delayed until
        * the promise is resolved
        */
-      self.handleActivated = function(info) {
+      self.handleActivated = function (info) {
         // Implement if needed
       };
 
@@ -57,7 +71,7 @@ var imageRoot = ""
        * @param {Function} info.valueAccessor - The binding's value accessor.
        * @param {boolean} info.fromCache - A boolean indicating whether the module was retrieved from cache.
        */
-      self.handleAttached = function(info) {
+      self.handleAttached = function (info) {
         // Implement if needed
       };
 
@@ -70,7 +84,7 @@ var imageRoot = ""
        * @param {Node} info.element - DOM element or where the binding is attached. This may be a 'virtual' element (comment node).
        * @param {Function} info.valueAccessor - The binding's value accessor.
        */
-      self.handleBindingsApplied = function(info) {
+      self.handleBindingsApplied = function (info) {
         // Implement if needed
       };
 
@@ -82,7 +96,7 @@ var imageRoot = ""
        * @param {Function} info.valueAccessor - The binding's value accessor.
        * @param {Array} info.cachedNodes - An Array containing cached nodes for the View if the cache is enabled.
        */
-      self.handleDetached = function(info) {
+      self.handleDetached = function (info) {
         // Implement if needed
       };
     }
@@ -92,6 +106,6 @@ var imageRoot = ""
      * each time the view is displayed.  Return an instance of the ViewModel if
      * only one instance of the ViewModel is needed.
      */
-    return new FinanceViewModel();
+    return new ContactFormViewModel();
   }
 );

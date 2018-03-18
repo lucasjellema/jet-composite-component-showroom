@@ -18,11 +18,11 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       self.router = oj.Router.rootInstance;
       self.router.configure({
         'dashboard': { label: 'Dashboard', isDefault: true },
-        'products': { label: 'Memory Game' },
-        'orders': { label: 'Orders' },
-        'customers': { label: 'Customers' },
-        'finance': { label: 'Financial Statements' },
-        'loyalty': { label: 'Loyalty Program' },
+        'memory': { label: 'Memory Game' },
+        'demo-columns': { label: 'demo-columns' },
+        'contact-form': { label: 'Contact FOrm' },
+        'card': { label: 'Contacts' },
+        'zoo': { label: 'Zoo selection' },
         'country': { label: 'Country Selection' }
       });
       oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
@@ -34,23 +34,23 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
           iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'
         },
         {
-          name: 'Memory Game', id: 'products',
+          name: 'Memory Game', id: 'memory',
           iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
         },
         {
-          name: 'Departments Overview', id: 'orders',
+          name: 'Departments Overview', id: 'demo-columns',
           iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-download-icon-24'
         },
         {
-          name: 'Contact Form', id: 'customers',
+          name: 'Contact Form', id: 'contact-form',
           iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-info-icon-24'
         },
         {
-          name: 'Oracle Park Zoo', id: 'loyalty',
+          name: 'Oracle Park Zoo', id: 'zoo',
           iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
         },
         {
-          name: 'Contact Cards', id: 'finance',
+          name: 'Contact Cards', id: 'card',
           iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-catalog-icon-24'
         },
         {

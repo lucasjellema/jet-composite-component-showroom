@@ -3,39 +3,33 @@
  * The Universal Permissive License (UPL), Version 1.0
  */
 /*
- * Your Products ViewModel code goes here
+ * Your about ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojcomposite', 
-'jet-composites/demo-memory-game/loader', 'ojs/ojinputnumber', 'ojs/ojpopup'],
-  function (oj, ko, $) {
 
-    function ProductsViewModel() {
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojcomposite', 'jet-composites/demo-card/loader'],
+ function(oj, ko, $) {
+  
+    function CardViewModel() {
       var self = this;
 
-      self.attempts = ko.observable(0);
-      var imageRoot = "css/"
-      self.chartImages = [
-        {value: 'donut chart', url: imageRoot+'images/componentcategories/donutchart_list.png'}, 
-        {value: 'pie chart', url:  imageRoot+'images/componentcategories/piechart_list.png'},
-        {value: 'scatter chart', url:  imageRoot+'images/componentcategories/scatterchart_list.png'},
-        {value: 'bubble chart', url:  imageRoot+'images/componentcategories/bubblechart_list.png'},
-        {value: 'pyramid chart', url:  imageRoot+'images/componentcategories/pyramidchart_list.png'},
-        {value: 'funnel chart', url:  imageRoot+'images/componentcategories/funnelchart_list.png'},
-        {value: 'stock chart', url:  imageRoot+'images/componentcategories/stockchart_list.png'},
-        {value: 'box plot', url:  imageRoot+'images/componentcategories/boxplot_list.png'}
-      ];
-
-      // Property change listeners for demo-memory-game's attempts and hasWon properties
-      // See the API doc Events section for more information on property change events
-      self.updateAttempts = function(event) {
-        self.attempts(event.detail.value);
-      }
-
-      self.showWinnerPopup = function(event) {
-        if (event.detail.value)
-          document.getElementById("popup1").open("#game1");
-      }
-
+var imageRoot = ""
+        self.employees = [
+          {
+            name: 'Deb Raphaely',
+            avatar: imageRoot+'css/images/debraphaely.png',
+            title: 'Purchasing Director',
+            work: 5171278899,
+            email: 'deb.raphaely@oracle.com'
+          },
+          {
+            name: 'Adam Fripp',
+            avatar: null,
+            title: 'IT Manager',
+            work: 6501232234,
+            email: 'adam.fripp@oracle.com'
+          }
+        ];
+     
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
       // Please reference the ojModule jsDoc for additional available methods.
 
@@ -50,7 +44,7 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojcomposite',
        * @return {Promise|undefined} - If the callback returns a Promise, the next phase (attaching DOM) will be delayed until
        * the promise is resolved
        */
-      self.handleActivated = function (info) {
+      self.handleActivated = function(info) {
         // Implement if needed
       };
 
@@ -63,7 +57,7 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojcomposite',
        * @param {Function} info.valueAccessor - The binding's value accessor.
        * @param {boolean} info.fromCache - A boolean indicating whether the module was retrieved from cache.
        */
-      self.handleAttached = function (info) {
+      self.handleAttached = function(info) {
         // Implement if needed
       };
 
@@ -76,7 +70,7 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojcomposite',
        * @param {Node} info.element - DOM element or where the binding is attached. This may be a 'virtual' element (comment node).
        * @param {Function} info.valueAccessor - The binding's value accessor.
        */
-      self.handleBindingsApplied = function (info) {
+      self.handleBindingsApplied = function(info) {
         // Implement if needed
       };
 
@@ -88,7 +82,7 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojcomposite',
        * @param {Function} info.valueAccessor - The binding's value accessor.
        * @param {Array} info.cachedNodes - An Array containing cached nodes for the View if the cache is enabled.
        */
-      self.handleDetached = function (info) {
+      self.handleDetached = function(info) {
         // Implement if needed
       };
     }
@@ -98,6 +92,6 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojcomposite',
      * each time the view is displayed.  Return an instance of the ViewModel if
      * only one instance of the ViewModel is needed.
      */
-    return new ProductsViewModel();
+    return new CardViewModel();
   }
 );

@@ -33,7 +33,7 @@ app.use(function (req, res, next) {
 
 app.get('/about', function (req, res) {
   var about = {
-    "about": "about operation on soaring portal backend",
+    "about": "about operation on JET Compposite Components Showroom",
     "PORT": process.env.PORT,
    "APP_VERSION ": APP_VERSION
   }

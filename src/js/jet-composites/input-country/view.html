@@ -9,7 +9,8 @@
   </oj-label>
   <oj-input-text :id="[['country-input'+ $uniqueId]]" value="{{$props.countryName}}"></oj-input-text>
   <img :id="[['countrySelectorOpen'+ $uniqueId]]" :src='[[require.toUrl("input-country/images/icon-world.png")]]' class='iconbtnintext'
-    title="Click to open World Map in Popup" data-bind="click: openPopup" />
+    title="Click to open World Map in Popup" data-bind="click: openPopup"
+    meta="v1.1" />
 </div>
 <div id="popupWrapper">
   <oj-popup class="input-country-country-selection-popup" :id="[['countrySelectionPopup'+ $uniqueId ]]" tail="none" position.my.horizontal="center"
